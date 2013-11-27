@@ -1,0 +1,24 @@
+--- simscan-1.4.0/configure.in	2013-11-11 14:01:04.663000006 -0700
++++ simscan-1.4.0-patched/configure.in	2013-11-11 14:14:34.720008465 -0700
+@@ -552,6 +552,9 @@
+          break
+       fi
+    done
++   if test "$ENABLE_RIPMIME" != ""; then
++     ripmime=$ENABLE_RIPMIME
++   fi
+ 
+    if test "$ripmime" = ""
+    then
+--- simscan-1.4.0/configure	2013-11-11 14:01:04.670000006 -0700
++++ simscan-1.4.0-patched/configure	2013-11-11 14:17:55.204003903 -0700
+@@ -4580,6 +4580,9 @@
+          break
+       fi
+    done
++   if test "$ENABLE_RIPMIME" != ""; then
++     ripmime=$ENABLE_RIPMIME
++   fi
+ 
+    if test "$ripmime" = ""
+    then

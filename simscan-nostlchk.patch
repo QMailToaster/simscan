@@ -1,0 +1,42 @@
+--- simscan-1.4.0/configure.in	2013-11-11 14:41:42.749000007 -0700
++++ simscan-1.4.0-patched/configure.in	2013-11-11 14:45:47.231995547 -0700
+@@ -659,7 +659,7 @@
+         ])
+ 
+         sigtoolp=""
+-        for f in $SIGTOOL_PATH /usr/local/bin/sigtool /usr/bin/sigtool
++        for f in /usr/local/bin/sigtool /usr/bin/sigtool
+         do
+           if test -f $f
+           then
+@@ -667,6 +667,9 @@
+             break
+           fi
+         done
++        if test "$SIGTOOL_PATH" != ""; then
++          sigtoolp=$SIGTOOL_PATH
++        fi
+ 
+         if test "$sigtoolp" = ""
+         then
+--- simscan-1.4.0/configure	2013-11-11 14:41:42.756000007 -0700
++++ simscan-1.4.0-patched/configure	2013-11-11 14:48:06.063952750 -0700
+@@ -4735,7 +4735,7 @@
+ fi;
+ 
+         sigtoolp=""
+-        for f in $SIGTOOL_PATH /usr/local/bin/sigtool /usr/bin/sigtool
++        for f in /usr/local/bin/sigtool /usr/bin/sigtool
+         do
+           if test -f $f
+           then
+@@ -4743,6 +4743,9 @@
+             break
+           fi
+         done
++        if test "$SIGTOOL_PATH" != ""; then
++          sigtoolp=$SIGTOOL_PATH
++        fi
+ 
+         if test "$sigtoolp" = ""
+         then

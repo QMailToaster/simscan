@@ -1,0 +1,42 @@
+--- simscan-1.4.0/configure.in	2013-11-11 14:27:20.211000007 -0700
++++ simscan-1.4.0-patched/configure.in	2013-11-11 14:37:38.387964989 -0700
+@@ -622,7 +622,7 @@
+           CLAMAV_DB="$enableval"
+         ])
+         clamavdb=""
+-        for f in "$CLAMAV_DB" /usr/local/share/clamav /var/lib/clamav
++        for f in /usr/local/share/clamav /var/lib/clamav
+         do
+           if test -f "$f/daily.cvd"
+           then
+@@ -638,6 +638,9 @@
+             break
+           fi
+         done
++        if test "$CLAMAV_DB" != ""; then
++          clamavdb=$CLAMAV_DB
++        fi
+ 
+         if test "$clamavdb" = ""
+         then
+--- simscan-1.4.0/configure	2013-11-11 14:27:20.218000007 -0700
++++ simscan-1.4.0-patched/configure	2013-11-11 14:39:48.857024370 -0700
+@@ -4686,7 +4686,7 @@
+ 
+ fi;
+         clamavdb=""
+-        for f in "$CLAMAV_DB" /usr/local/share/clamav /var/lib/clamav
++        for f in /usr/local/share/clamav /var/lib/clamav
+         do
+           if test -f "$f/daily.cvd"
+           then
+@@ -4702,6 +4702,9 @@
+             break
+           fi
+         done
++        if test "$CLAMAV_DB" != ""; then
++          clamavdb=$CLAMAV_DB
++        fi
+ 
+         if test "$clamavdb" = ""
+         then

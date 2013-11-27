@@ -1,0 +1,21 @@
+diff -Naur simscan-1.4.0-original/simscanmk.c simscan-1.4.0/simscanmk.c
+--- simscan-1.4.0-original/simscanmk.c	2006-10-10 19:15:17.000000000 -0400
++++ simscan-1.4.0/simscanmk.c	2009-04-24 01:04:02.000000000 -0400
+@@ -130,7 +130,7 @@
+   int fnd_patvers;
+ #endif
+ 
+-  if ( (fdout = open(CdbTmpFile, O_CREAT | O_TRUNC | O_WRONLY)) < 0) {
++  if ( (fdout = open(CdbTmpFile, O_CREAT | O_TRUNC | O_WRONLY, 0644)) < 0) {
+     printf("error on open tmp file\n");
+     return(-1);
+   }
+@@ -376,7 +376,7 @@
+     return(-1);
+   }
+  
+-  if ( (fdout = open(CdbTmpFile, O_CREAT | O_TRUNC | O_WRONLY)) < 0) {
++  if ( (fdout = open(CdbTmpFile, O_CREAT | O_TRUNC | O_WRONLY, 0644)) < 0) {
+      printf("error on open tmp file\n");
+     return(-1);
+   }
