@@ -107,8 +107,8 @@ rm -rf %{buildroot}
 install -d %{buildroot}%{qdir}
 install -d %{buildroot}%{qdir}/%{name}
 
-install -Dp %{_sourcedir}/update-simscan  %{buildroot}%{qbin}
-install -Dp %{_sourcedir}/simcontrol      %{buildroot}%{qcon}
+install -Dp %{_sourcedir}/update-simscan  %{buildroot}%{qbin}/update-simscan
+install -Dp %{_sourcedir}/simcontrol      %{buildroot}%{qcon}/simcontrol
 
 install $RPM_BUILD_DIR/%{name}-%{version}/%{name}   %{buildroot}%{qbin}/%{name}
 install $RPM_BUILD_DIR/%{name}-%{version}/simscanmk %{buildroot}%{qbin}/simscanmk
