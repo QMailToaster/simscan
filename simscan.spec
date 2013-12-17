@@ -107,14 +107,14 @@ rm -rf %{buildroot}
 install -d %{buildroot}%{qdir}
 install -d %{buildroot}%{qdir}/%{name}
 
-install -Dp %{_sourcedir}/update-simscan  %{buildroot}%{qbin}/update-simscan
-install -Dp %{_sourcedir}/simcontrol      %{buildroot}%{qcon}/simcontrol
+install -Dp %{SOURCE1}  %{buildroot}%{qbin}/update-simscan
+install -Dp %{SOURCE2}  %{buildroot}%{qcon}/simcontrol
 
-install $RPM_BUILD_DIR/%{name}-%{version}/%{name}   %{buildroot}%{qbin}/%{name}
-install $RPM_BUILD_DIR/%{name}-%{version}/simscanmk %{buildroot}%{qbin}/simscanmk
+install %{_builddir}/%{name}-%{version}/%{name}   %{buildroot}%{qbin}/%{name}
+install %{_builddir}/%{name}-%{version}/simscanmk %{buildroot}%{qbin}/simscanmk
 
 for i in AUTHORS ChangeLog INSTALL README TODO ssattach.example; do
-  install -Dp $RPM_BUILD_DIR/%{name}-%{version}/$i \
+  install -Dp %{_builddir}/%{name}-%{version}/$i \
         %{buildroot}%{_datadir}/doc/%{name}-%{version}/$i
 done
 
