@@ -1,26 +1,28 @@
-Name:		simscan
-Summary:	Simscan for qmail-toaster
-Version:	1.4.0
-Release:	0%{?dist}
-License:	GPLv2
-Group:		Networking/Other
-URL:		http://inter7.com/index.php?page=simscan
-Source0:	http://downloads.sourceforge.net/project/simscan/simscan/simscan-1.4.0/%{name}-%{version}.tar.gz
-Source1:	update-simscan
-Source2:	simcontrol
-Patch0:		simscan-1.4.0-combined.4.patch
-Patch1:		simscan-o_create.patch
-Patch2:		simscan-nouserchk.patch
-Patch3:		simscan-noripchk.patch
-Patch4:		simscan-nosapchk.patch
-Patch5:		simscan-nocavdbchk.patch
-Patch6:		simscan-nostlchk.patch
-Requires:	clamav
-Requires:	qmail
-Requires:	ripmime
-Requires:	spamassassin
-Obsoletes:      simscan-toaster
-BuildRoot:      %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
+Name:      simscan
+Summary:   Simscan for qmail-toaster
+Version:   1.4.0
+Release:   0%{?dist}
+License:   GPLv2
+Group:     Networking/Other
+Vendor:    QmailToaster
+Packager:  Eric Shubert <qmt-build@datamatters.us>
+URL:       http://inter7.com/index.php?page=simscan
+Source0:   http://downloads.sourceforge.net/project/simscan/simscan/simscan-1.4.0/%{name}-%{version}.tar.gz
+Source1:   update-simscan
+Source2:   simcontrol
+Patch0:    simscan-1.4.0-combined.4.patch
+Patch1:    simscan-o_create.patch
+Patch2:    simscan-nouserchk.patch
+Patch3:    simscan-noripchk.patch
+Patch4:    simscan-nosapchk.patch
+Patch5:    simscan-nocavdbchk.patch
+Patch6:    simscan-nostlchk.patch
+Requires:  clamav
+Requires:  qmail
+Requires:  ripmime
+Requires:  spamassassin
+Obsoletes: simscan-toaster
+BuildRoot: %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
 
 %define qdir    /var/qmail
 %define qbin    %{qdir}/bin
